@@ -1,0 +1,22 @@
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'recycler'
+
+    publishedGroupId = 'net.devwiki.recycler'
+    artifact = 'recycler'
+    libraryName = 'recycler'
+
+    libraryVersion = '0.0.3'
+    libraryDescription = 'Android RecyclerView Utils'
+
+    siteUrl = 'https://github.com/Dev-Wiki/DevRecycler'
+    gitUrl = 'https://github.com/Dev-Wiki/DevRecycler.git'
+
+    developerId = 'DevWiki'
+    developerName = 'DevWiki'
+    developerEmail = 'bozhou2010@live.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
