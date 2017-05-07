@@ -1,0 +1,11 @@
+ext {
+    compileSdkVer = 25
+    buildToolsVer = '25.0.2'
+    minSdkver = 15
+    targetSdkVer = 25
+
+    supportAppCompat = 'com.android.support:appcompat-v7:25.0.0'
+    supportRecyclerView = 'com.android.support:appcompat-v7:25.0.0'
+
+    junit = 'junit:junit:4.12'
+}
