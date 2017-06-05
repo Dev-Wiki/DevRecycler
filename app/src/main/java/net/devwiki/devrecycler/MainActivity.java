@@ -7,12 +7,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import net.devwiki.recycler.view.DefaultScrollCallback;
+import net.devwiki.recycler.view.ScrollRecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView studentRv;
+    private ScrollRecyclerView studentRv;
     private StudentAdapter mAdapter;
 
     @Override
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        studentRv = (RecyclerView) findViewById(R.id.student_rv);
+        studentRv = (ScrollRecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         studentRv.setLayoutManager(layoutManager);
         mAdapter = new StudentAdapter(this);
@@ -35,5 +38,8 @@ public class MainActivity extends AppCompatActivity {
             list.add(student);
         }
         mAdapter.fillList(list);
+        studentRv.setScrollCallback(new DefaultScrollCallback() {
+
+        });
     }
 }
