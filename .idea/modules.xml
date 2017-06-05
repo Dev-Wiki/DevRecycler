@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DevRecycler.iml" filepath="$PROJECT_DIR$/DevRecycler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DevRecycler.iml" filepath="$PROJECT_DIR$/DevRecycler.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recycler/recycler.iml" filepath="$PROJECT_DIR$/recycler/recycler.iml" />
       <module fileurl="file://$PROJECT_DIR$/recycler/recycler.iml" filepath="$PROJECT_DIR$/recycler/recycler.iml" />
     </modules>
   </component>

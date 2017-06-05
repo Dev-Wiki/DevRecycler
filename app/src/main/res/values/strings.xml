@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DevRecycler</string>
+    <string name="student_name">姓名</string>
+    <string name="student_age">年龄</string>
 </resources>

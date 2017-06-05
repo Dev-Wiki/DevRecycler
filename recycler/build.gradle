@@ -1,14 +1,12 @@
 apply plugin: 'com.android.library'
-apply from: 'config.gradle'
 
 android {
-
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion compileSdkVer
+    buildToolsVersion buildToolsVer
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion minSdkver
+        targetSdkVersion targetSdkVer
         versionCode 1
         versionName "1.0"
     }
@@ -22,10 +20,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    compile supportAppCompat
+    compile supportRecyclerView
+    testCompile junit
 }
-
-apply from: '../installv1.gradle'
-apply from: '../bintrayv1.gradle'

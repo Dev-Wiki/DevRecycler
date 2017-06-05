@@ -35,7 +35,9 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
     public boolean fillList(List<M> list) {
         dataList.clear();
         boolean result = dataList.addAll(list);
-        notifyDataSetChanged();
+        if (result) {
+            notifyDataSetChanged();
+        }
         return result;
     }
 
@@ -47,10 +49,12 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
      */
     public boolean appendItem(M data) {
         boolean result = dataList.add(data);
-        if (getHeaderViewCount() == 0) {
-            notifyItemInserted(dataList.size() - 1);
-        } else {
-            notifyItemInserted(dataList.size());
+        if (result) {
+            if (getHeaderExtraViewCount() == 0) {
+                notifyItemInserted(dataList.size() - 1);
+            } else {
+                notifyItemInserted(dataList.size());
+            }
         }
         return result;
     }
@@ -63,7 +67,9 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
      */
     public boolean appendList(List<M> list) {
         boolean result = dataList.addAll(list);
-        notifyDataSetChanged();
+        if (result) {
+            notifyDataSetChanged();
+        }
         return result;
     }
 
@@ -74,10 +80,10 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
      */
     public void proposeItem(M data) {
         dataList.add(0, data);
-        if (getHeaderViewCount() == 0) {
+        if (getHeaderExtraViewCount() == 0) {
             notifyItemInserted(0);
         } else {
-            notifyItemInserted(getHeaderViewCount());
+            notifyItemInserted(getHeaderExtraViewCount());
         }
     }
 
@@ -100,7 +106,7 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
     public final int getItemViewType(int position) {
         if (headerView != null && position == 0) {
             return VIEW_TYPE_HEADER;
-        } else if (footerView != null && position == dataList.size() + getHeaderViewCount()) {
+        } else if (footerView != null && position == dataList.size() + getHeaderExtraViewCount()) {
             return VIEW_TYPE_FOOTER;
         } else {
             return getCustomViewType(position);
@@ -128,7 +134,7 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
      */
     public M getItem(int position) {
         if (headerView != null && position == 0
-                || position >= dataList.size() + getHeaderViewCount()) {
+                || position >= dataList.size() + getHeaderExtraViewCount()) {
             return null;
         }
         return headerView == null ? dataList.get(position) : dataList.get(position - 1);
@@ -142,14 +148,6 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
      */
     public M getItem(VH holder) {
         return getItem(holder.getAdapterPosition());
-    }
-
-    /**
-     * 获取所有数据
-     * @return 返回数据存放在一个新的集合,不是Adapter内置的集合
-     */
-    public List<M> getAllData() {
-        return dataList;
     }
 
     public void updateItem(M data) {
@@ -195,10 +193,5 @@ public abstract class BaseAdapter<M, VH extends BaseHolder> extends AbsAdapter<M
         } else {
             notifyItemRemoved(index + 1);
         }
-    }
-
-    public void clear() {
-        dataList.clear();
-        notifyDataSetChanged();
     }
 }
