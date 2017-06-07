@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply from: 'public_config.gradle'
 
 android {
     compileSdkVersion compileSdkVer
@@ -20,7 +21,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile supportAppCompat
-    compile supportRecyclerView
-    testCompile junit
+    compile libraries.supportAppCompat
+    compile libraries.supportRecyclerView
+    compile libraries.supportAnnotations
+    testCompile libraries.junit
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+apply from: "${rootDir}/gradle/bintray_v1.gradle"
+apply from: "${rootDir}/gradle/install_v1.gradle"

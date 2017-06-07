@@ -132,49 +132,22 @@ public class ScrollRecyclerView extends RecyclerView {
 
     interface OnScrollCallback {
 
-        /**
-         * 自己往列表顶部方向滚动
-         */
         void onSettlingScrollUp();
 
-        /**
-         * 自己往列表底部方向滚动
-         */
         void onSettlingScrollDown();
 
-        /**
-         * 列表停止滚动
-         */
         void onScrollIdle();
 
-        /**
-         * 滚动到列表底部
-         */
         void onScrollToBottom();
 
-        /**
-         * 滚动到列表顶部
-         */
         void onScrollToTop();
 
-        /**
-         * 向列表顶部方向拖动滚动
-         */
         void onDraggingScrollUp();
 
-        /**
-         * 向列表底部方向拖动滚动
-         */
         void onDraggingScrollDown();
 
-        /**
-         * 在列表顶部往下拖拽
-         */
         void onTopDraggingDown();
 
-        /**
-         * 在列表底部往上拖拽
-         */
         void onBottomDraggingUp();
     }
 }
