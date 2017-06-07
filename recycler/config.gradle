@@ -6,7 +6,7 @@ ext {
     artifact = 'recycler'
     libraryName = 'recycler'
 
-    libraryVersion = '0.0.3'
+    libraryVersion = '0.0.4'
     libraryDescription = 'Android RecyclerView Utils'
 
     siteUrl = 'https://github.com/Dev-Wiki/DevRecycler'
