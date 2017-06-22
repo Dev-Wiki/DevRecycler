@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/net/devwiki/devrecycler/Student.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/AbsAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/BaseAdapter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/BaseHolder.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/DividerDecoration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/HorizontalDividerDecoration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/ItemClickSupport.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/ItemTouchSupport.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/VerticalDividerDecoration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/recycler/src/main/java/net/devwiki/recycler/view/ScrollRecyclerView.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

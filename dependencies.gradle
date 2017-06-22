@@ -1,0 +1,42 @@
+ext {
+    //编译SDK版本
+    compileSdkVer = 25
+    //构建工具版本
+    buildToolsVer = "25.0.3"
+    //最低兼容版本
+    minSdkver = 15
+    //测试过的版本
+    targetSdkVer = 25
+    //JDK版本
+    sourceCompatVer = JavaVersion.VERSION_1_7
+    targetCompatVer = JavaVersion.VERSION_1_7
+
+    versions = [
+        supportVersion: "25.2.0",
+        junit         : "4.12",
+
+        devLog        : "0.0.2",
+    ]
+
+    libraries = [
+        supportAppCompat   : "com.android.support:appcompat-v7:${versions.supportVersion}",
+        supportAnnotations : "com.android.support:appcompat-v7:${versions.supportVersion}",
+        supportRecyclerView: "com.android.support:recyclerview-v7:${versions.supportVersion}",
+        junit              : "junit:junit:${versions.junit}",
+        devLog             : "net.devwiki.log:log:${versions.devLog}"
+    ]
+
+    plugin_versions = [
+        android_gradle: "2.3.2",
+        versions      : "0.15.0",
+        bintray       : "1.7.3",
+        android_maven : "1.5",
+    ]
+
+    gradle_plugins = [
+        android_gradle: "com.android.tools.build:gradle:${plugin_versions.android_gradle}",
+        versions      : "com.github.ben-manes:gradle-versions-plugin:${plugin_versions.versions}",
+        bintray       : "com.jfrog.bintray.gradle:gradle-bintray-plugin:${plugin_versions.bintray}",
+        android_maven : "com.github.dcendents:android-maven-gradle-plugin:${plugin_versions.android_maven}",
+    ]
+}

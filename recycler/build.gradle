@@ -1,5 +1,28 @@
 apply plugin: 'com.android.library'
-apply from: 'public_config.gradle'
+//apply from: 'bintray_config.gradle'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'recycler'
+
+    publishedGroupId = 'net.devwiki.recycler'
+    artifact = 'recycler'
+    libraryName = 'recycler'
+
+    libraryVersion = '0.0.4'
+    libraryDescription = 'Android RecyclerView Utils'
+
+    siteUrl = 'https://github.com/Dev-Wiki/DevRecycler'
+    gitUrl = 'https://github.com/Dev-Wiki/DevRecycler.git'
+
+    developerId = 'DevWiki'
+    developerName = 'DevWiki'
+    developerEmail = 'bozhou2010@live.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion compileSdkVer
@@ -27,9 +50,5 @@ dependencies {
     testCompile libraries.junit
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}
-
-apply from: "${rootDir}/gradle/bintray_v1.gradle"
-apply from: "${rootDir}/gradle/install_v1.gradle"
+apply from: "${rootDir}/bintrayv1.gradle"
+apply from: "${rootDir}/installv1.gradle"
